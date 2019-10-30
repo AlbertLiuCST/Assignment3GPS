@@ -1,5 +1,5 @@
 CC=gcc -Wall
-CLIB=-lgps -lpthread
+CLIB=-lgps 
 
 dcgps: dcgps.o gps-utils.o gpsprint.o
 	$(CC) -o dcgps dcgps.o gps-utils.o gpsprint.o $(CLIB)

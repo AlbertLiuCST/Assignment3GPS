@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <gps.h>
 
-#include "gps-utils.h"
-
+#include "dcgps.h"
 
 #define LOCAL_HOST "127.0.0.1"
 #define PORT "2947"
 
 struct gps_data_t *gps_data_ptr;
 static struct fixsource_t source;
+
 
 int main() {
     //Malloc gps_data ptr

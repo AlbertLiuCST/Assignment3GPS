@@ -54,7 +54,7 @@ void printLatitude() {
 
     if (gpsdata->fix.mode >= MODE_2D && isnan (gpsdata->fix.latitude) == 0) {
 
-        fprintf(stdout, "Latitude: %s %c;", deg_to_str(deg_type, fabs(gpsdata->fix.latitude)),
+        fprintf(stdout, "Latitude: %s %c;", deg_to_str2(deg_type, fabs(gpsdata->fix.latitude)),
                 (gpsdata->fix.latitude < 0) ? 'S' : 'N');
 
         fflush(stdout);

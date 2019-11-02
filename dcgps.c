@@ -12,7 +12,7 @@ static struct fixsource_t source;
 
 
 int main() {
-    //Malloc gps_data ptr
+    //malloc gps_data ptr
     gps_data_ptr = malloc(sizeof(struct gps_data_t));
 
     source.server = LOCAL_HOST;
@@ -36,7 +36,8 @@ int main() {
         gps_stream(gps_data_ptr, flags, NULL);
         scan(gps_data_ptr);
     }
-
+    
+    gps_close(gps_data_ptr);
 
 
         

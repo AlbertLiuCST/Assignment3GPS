@@ -22,11 +22,13 @@ void scan(struct gps_data_t *gps_data_ptr){
 				fprintf(stderr, "gps failed to read");
 				exit(1);
 			} else {
-				if(gps_data_ptr->fix.mode >= MODE_2D 
-				&& !isnan(gps_data_ptr->fix.latitude)
-				&& !isnan(gps_data_ptr->fix.longitude){
+				//Checks to make sure lat and long exist
+				if(gps_data_ptr->fix.mode == MODE_3D 
+				&& isnan(gps_data_ptr->fix.latitude) == 0
+				&& isnan(gps_data_ptr->fix.longitude) == 0){
 					print(gps_data_ptr);
 				}
+				
 			}
 		} 
 	}

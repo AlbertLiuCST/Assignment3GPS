@@ -56,19 +56,11 @@ void print(struct gps_data_t *gps_data_ptr){
                 gps_data_ptr->skyview[i].used ? "Yes" : "No");
         }
         printf("----------------------------------------------------------------------\n");
-        printTime((time_t *) gps_data_ptr->fix.time);
-        printf("Time:%f Latitude: %2f Longitude: %2f\n", gps_data_ptr->fix.time, gps_data_ptr->fix.latitude, gps_data_ptr->fix.longitude);
+        
+        
+        time_t time = gps_data_ptr->fix.time;
+        printf("%sLatitude: %2f Longitude: %2f\n", ctime(&time), gps_data_ptr->fix.latitude, gps_data_ptr->fix.longitude);
 
     }
 }
 
-void printTime(time_t tm){
-  tm *t = localtime(tm);
-  printf("%d-%d-%d %d:%d:%d",
-          t->tm_year,
-          t->tm_mon,
-          t->tm_mday,
-          t->tm_hour,
-          t->tm_min,
-          t->tm_sec,);
-}
